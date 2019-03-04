@@ -2461,6 +2461,10 @@ body {
   -webkit-transform: translateX(-50%) scale(0.95);
           transform: translateX(-50%) scale(0.95);
 }
+.button a{
+  color: inherit;
+  text-decoration: none;
+}
 .sorry {
   position: absolute;
   top: 210px;

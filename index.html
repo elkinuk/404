@@ -171,13 +171,33 @@
         </div>
       </div>
     </div>
-    <div class="button">GO HOME</div>
+    <div class="button"><a href="https://github.com/elkinny">GO HOME</a></div>
   </div>
   <div class="sorry">Oops! Sorry, page not found.</div>
-</div><a class="inspiration" href="https://codepen.io/elkinny/pen/XGjjwZ#" target="_blank" rel="noopener">source</a>
-  
-  
+</div><a class="inspiration" href="https://codepen.io/FilipVitas/pen/KRRRoY" target="_blank" rel="noopener">source</a>
 
+<script>
+
+  let oh = document.querySelector('.circle.oh')
+
+  document.addEventListener('mousemove', event => {
+    let domainX = [0, document.body.clientWidth],
+        domainY = [0, document.body.clientHeight],
+        range = [-10, 10]
+
+    let translate = {
+      x: range[0] + (event.clientX - domainX[0]) * (range[1] - range[0])/(domainX[1] - domainX[0]),
+      y: range[0] + (event.clientY - domainY[0]) * (range[1] - range[0])/(domainY[1] - domainY[0])
+    }
+
+    oh.style.animation = 'none'
+    oh.style.transform = `translate(${translate.x}px, ${translate.y}px)`
+  })
+
+  document.addEventListener('mouseleave', event => {
+    oh.style.animation = 'floating 3s linear infinite'
+  })
+</script>
 </body>
 
 </html>
